@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para nuestros 4 meses &lt;3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fdf0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3.5rem;
+            color: #ff69b4;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            text-align: center;
+            transition: transform 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .title:hover {
+            transform: scale(1.1) translate(-50%, -50%); /* Mantiene la posición central */
+            color: #e84c88;
+        }
+
+
+        .collage {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .photo {
+            position: absolute;
+            max-width: 308px;
+            border: 8px solid white;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.1);
+        }
+
+        .photo1 { top: 8%; left: 15%; rotate: -12deg; }
+        .photo2 { top: 15%; left: 75%; rotate: 10deg; }
+        .photo3 { top: 50%; left: 5%; rotate: -5deg; }
+        .photo4 { top: 60%; left: 30%; rotate: 8deg; }
+        .photo5 { top: 5%; left: 45%; rotate: 15deg; }
+        .photo6 { top: 45%; left: 80%; rotate: -8deg; }
+        .photo7 { top: 60%; left: 60%; rotate: -10deg; }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            z-index: 20;
+            text-align: center;
+        }
+
+        .popup audio {
+            margin-top: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #ff69b4;
+            border: none;
+            background: none;
+        }
+
+        .close-btn:hover {
+            color: #e84c88;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="collage">
+        <h1 class="title" onclick="openPopup()">4 meses&lt;3</h1>
+        <img src="1.jpg" alt="Foto 1" class="photo photo1">
+        <img src="2.jpg" alt="Foto 2" class="photo photo2">
+        <img src="3.jpg" alt="Foto 3" class="photo photo3">
+        <img src="4.jpg" alt="Foto 4" class="photo photo4">
+        <img src="5.jpg" alt="Foto 5" class="photo photo5">
+        <img src="6.jpg" alt="Foto 6" class="photo photo6">
+        <img src="7.jpg" alt="Foto 7" class="photo photo7">
+    </div>
+    <div id="popup" class="popup">
+        <button class="close-btn" onclick="closePopup()">✖</button>
+        <p>💜</p>
+        <audio controls autoplay>
+            <source src="audio.opus" type="audio/mpeg">
+        </audio>
+    </div>
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
